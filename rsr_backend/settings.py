@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '$c6p)rsh17=n#y^bihwa=tx#m2ld!ihm43@=xags+jkn7*55dg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'rsr_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER' : os.environ.get('DB_USER'),
-        'PASSWORD' : os.environ.get('DB_PASSWORD'),
+        'NAME': 'signs',
+        'USER' : 'postgres',
+        'PASSWORD' : '123',
         'HOST' : '',
         'PORT' : '',
     }
@@ -135,6 +135,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-import django_heroku
-django_heroku.settings(locals())
