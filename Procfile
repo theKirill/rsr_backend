@@ -1,1 +1,3 @@
-gunicorn rsr_backend.wsgi:application --preload --workers 1
+web: gunicorn rsr_backend.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
