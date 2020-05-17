@@ -11,3 +11,4 @@ class RoadSign(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=1000)
     important_info = models.CharField(max_length=500)
+    img_template_url = models.CharField(max_length=100, blank=True, null=True)
