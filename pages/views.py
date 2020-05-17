@@ -80,6 +80,7 @@ def create_sign(request):
     name = request.data.get("name")
     description = request.data.get("description")
     important_info = request.data.get("important_info")
+    img_template_url = request.data.get("img_template_url")
     type = request.data.get("type")
     type = RoadSignType.objects.get(name=type)
 
@@ -87,7 +88,8 @@ def create_sign(request):
                                    name=name, 
                                    description=description, 
                                    important_info=important_info, 
-                                   type_id=type.id)
+                                   type_id=type.id,
+                                   img_template_url=img_template_url)
 
     serializer = RoadSignSerializer(sign)
     response = {'success': True, 'result' : serializer.data}
