@@ -26,4 +26,5 @@ urlpatterns = [
     path('api/create_sign', views.create_sign),
     path('api/signs', views.get_signs),
     path('api/signs/<int:sign_id>', views.get_sign_by_id),
+    path('api/signs/get_labels', views.get_labels),
 ]

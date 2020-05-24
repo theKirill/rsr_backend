@@ -123,3 +123,14 @@ def get_signs(request):
        serialized_signs.append(RoadSignSerializer(sign).data)
 
     return Response({"result": serialized_signs})
+
+@csrf_exempt
+@api_view(["GET"])
+def get_labels(request):
+    signs = RoadSign.objects.all()
+
+    labels = [1, 2]
+    for sign in signs:
+        labels.append(sign.id)
+
+    return Response({"result": labels})
